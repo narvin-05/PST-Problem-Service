@@ -2,6 +2,7 @@ const express = require('express');
 const bodyparser = require('body-parser');
 const {PORT} = require('./config/server.config');
 const apiRouter = require('./routes'); 
+const errorHandler = require('./utils/ErrorHandler');
 
 const app = express();
 
@@ -11,10 +12,13 @@ app.use(bodyparser.text());
 
 
 app.use('/api', apiRouter);
+// demo
 
 app.get('/ping', (req,res) =>{
     res.send({"message":"Problem service is alive"})
 })
+
+app.use(errorHandler);
 
 app.listen(PORT, (req,res) =>{
     console.log(`Server is up and running at ${PORT}`);
