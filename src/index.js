@@ -12,6 +12,7 @@ app.use(bodyparser.text());
 
 
 app.use('/api', apiRouter);
+// demo
 
 app.get('/ping', (req,res) =>{
     res.send({"message":"Problem service is alive"})
