@@ -17,31 +17,38 @@ function addProblem(req,res,next){
 }
 function getProblem(req,res,next){
     try {
-        throw new NotImplemented("addProblem")
-   } catch (error) {
-       next(errorHandler);
-   }
+        // nothing implemented
+        throw new NotImplemented('Add Problem');
+    } catch(error) {
+        next(error);
+    }
 } 
 
 function getProblems(req,res,next){
     try {
-        throw new NotImplemented("addProblem")
-        
-   } catch (error) {
-       next(errorHandler);
-   }
+        // nothing implemented
+        throw new NotImplemented('Add Problem');
+    } catch(error) {
+        next(error);
+    }
 }
 
 function deleteProblem(req,res,next){
-    return res.status(StatusCodes.NOT_IMPLEMENTED).json({
-        message:"Not implemented yet"
-    })
+    try {
+        // nothing implemented
+        throw new NotImplemented('Add Problem');
+    } catch(error) {
+        next(error);
+    }
 }
 
 function updateProblem(req,res,next){
-    return res.status(StatusCodes.NOT_IMPLEMENTED).json({
-        message:"Not implemented yet"
-    })
+    try {
+        // nothing implemented
+        throw new NotImplemented('Add Problem');
+    } catch(error) {
+        next(error);
+    }
 }
 
 module.exports = {
