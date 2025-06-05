@@ -5,6 +5,7 @@ const apiRouter = require('./routes');
 const errorHandler = require('./utils/ErrorHandler');
 const connectToDB = require('./config/db.config');
 
+
 const app = express();
 
 app.use(bodyparser.json());
@@ -25,6 +26,9 @@ app.listen(PORT, async(req,res) =>{
     console.log(`Server is up and running at ${PORT}`);
     await connectToDB();
     console.log(`Successfully connected to DB`);
+
+    
+
 
 })
  
