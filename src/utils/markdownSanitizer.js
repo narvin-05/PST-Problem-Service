@@ -6,16 +6,16 @@ function sanitizeMarkdownContent(markdownContent){
     const turndownService = new TurnDownService();  
     //1. Convert markdown to HTMl
     const convertedHTML = marked.parse(markdownContent);
-    console.log("Converted HTML as -> " ,convertedHTML);
+    // console.log("Converted HTML as -> " ,convertedHTML);
     // Sanitize HTML
     const sanitizedHTML = sanitizeHtmlLibrary(convertedHTML,{
-        allowedTags: sanitizeHtmlLibrary.defaults.allowedTags
+        allowedTags: sanitizeHtmlLibrary.defaults.allowedTags.concat(['img'])
     })
-    console.log("Sanitized HTML as -> " ,sanitizedHTML);
+    // console.log("Sanitized HTML as -> " ,sanitizedHTML);
     // 3. Convert the sanitized HTMl back to markup
     const sanitizedMarkDown =  turndownService.turndown(sanitizedHTML);
     // console.log(sanitizedMarkDown);
-    console.log("Sanitized markdown as -> " ,sanitizedMarkDown);
+    // console.log("Sanitized markdown as -> " ,sanitizedMarkDown);
     return sanitizedMarkDown;
 }
 
