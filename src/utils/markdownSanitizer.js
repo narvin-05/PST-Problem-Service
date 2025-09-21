@@ -7,7 +7,7 @@ function sanitizeMarkdownContent(markdownContent){
     //1. Convert markdown to HTMl
     const convertedHTML = marked.parse(markdownContent);
     // console.log("Converted HTML as -> " ,convertedHTML);
-    // Sanitize HTML
+    //2. Sanitize HTML
     const sanitizedHTML = sanitizeHtmlLibrary(convertedHTML,{
         allowedTags: sanitizeHtmlLibrary.defaults.allowedTags.concat(['img'])
     })
